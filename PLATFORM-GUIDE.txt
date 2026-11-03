@@ -1,0 +1,218 @@
+PALATE — COMPLETE LOCAL WEBSITE
+
+LOCATION
+/Users/varun/Downloads/Palate
+Local website: http://127.0.0.1:8942/
+Dashboard preview: http://127.0.0.1:8942/dashboard/?preview=1
+Owner sign-in: http://127.0.0.1:8942/login/
+Staff sign-in: http://127.0.0.1:8942/admin/
+Create account: http://127.0.0.1:8942/signup/
+Sample guest menu: http://127.0.0.1:8942/menu/
+
+The website stays local, as requested. Its database, authentication, restaurant
+images, and recommendation function run in your existing Supabase project:
+opxmijpsppojwpogvfwd. No public website hosting or domain has been purchased.
+
+FIRST ADMINISTRATOR
+The existing administrator is varunbkurra@gmail.com. Existing staff and owner
+memberships remain active. New access uses a private, single-use invitation
+created in Team; entering an invited email alone never grants access.
+
+DEPLOYMENT
+Read README.md and VERCEL-SETUP.md for the current GitHub/Vercel setup.
+Those instructions supersede older deployment and invitation notes below.
+
+WHAT IS BUILT
+• Existing marketing homepage, connected to actual signup and login.
+• Product, pricing, how-it-works, support, privacy and terms pages.
+• Signup with immediate sign-in, login, password reset, account settings.
+• Blurred onboarding dashboard with a short demo request and waiting state.
+• Staff restaurant directory, restaurant creation, demo inbox and approval.
+• Active/setup/paused/archived restaurant lifecycle, controlled on the server.
+• Owner overview, analytics, dish editor, category management and ordering.
+• CSV/JSON menu import, eight sample dishes, duplication and display ordering.
+• Supabase image uploads and restaurant-specific photo library.
+• Names, photos, prices, descriptions, ingredients, availability, dietary labels,
+  allergens, recommendation keywords, pairings and meal-course management.
+• Specials/bundles with a featured offer and validated discount amounts.
+• Restaurant branding, logo, monogram, colors, typography, address, hours,
+  currency and menu address.
+• Language editor for category names, dish details, ingredients, restaurant
+  information and featured offers. 80 interface language bundles are included.
+• QR code PNG/SVG downloads, source-tagged links and website embed code.
+• Owner/editor access, staff administrator/operator access, single-use invitation claiming.
+• Support requests, staff responses, direct email links, and change history.
+• Published restaurant menus use the approved mobile-first template, with
+  bottom sheets on phones and side panels on larger displays.
+• Loading skeletons, empty states, error handling, reduced-motion styles,
+  keyboard-friendly dialogs and responsive navigation.
+
+YOUR SALES / SETUP WORKFLOW
+1. Sign into the staff workspace and choose Add restaurant.
+2. Add its name, unique menu address and optional owner email.
+3. Open Menu. Import a CSV or Palate JSON file, use the sample dishes, or add
+   dishes manually. Sample images are copied into that restaurant's storage.
+4. Upload real food photos where available. Label generated images as AI
+   illustrations. Confirm prices, ingredients and allergen labels with the shop.
+5. Set branding, restaurant details, language content and any featured special.
+6. In Demo requests, connect the owner's request to the restaurant and approve
+   it. This grants owner membership. Alternatively create a private invitation in
+   Team and send its link directly to the intended owner.
+7. Set the restaurant to Active. It must have at least one dish. Its menu becomes
+   public and the owner's dashboard unlocks. Setup or paused restaurants remain
+   inaccessible to guests and are not editable by owners.
+8. Share the link and QR code. Owners can now maintain their menu themselves.
+
+LOCAL LINKS
+Restaurant menus currently use /menu/?shop=restaurant-slug. The restaurant slug
+is unique. QR/source labels are qr, website, social and direct. Renaming a slug
+breaks old printed codes; the Settings page explains this.
+Local QR codes point at this computer, not a public Internet address. Download
+final codes only after choosing a public site address.
+
+SUPABASE DESIGN
+This is a multi-tenant database: one scalable shared set of tables, with a
+restaurant_id on each restaurant-owned record. It does not create a separate
+table or database for every shop. Row-level policies enforce isolation.
+
+public.restaurants: identity, slug, status, branding/settings and plan amounts.
+public.restaurant_members: verified user-to-shop memberships (owner/editor).
+public.restaurant_invitations: email-based access waiting to be claimed.
+public.palate_staff / staff_invitations: protected Palate team roles.
+public.demo_requests: signup/demo workflow, one request per user.
+public.menu_categories / menu_items / menu_deals: tenant-scoped menu records.
+public.menu_events: anonymous menu interactions and source/language metadata.
+public.support_tickets: customer support and staff responses.
+public.audit_log: changes to restaurant and menu records.
+private.request_limits: short-lived server-side recommendation usage limits.
+Storage bucket menu-media: restaurant UUID / unique filename.
+
+Images are deliberately public menu assets. Uploads, updates, listing and deletes
+are restricted to the restaurant's authorized users or Palate staff. SVG and
+non-image uploads are rejected. Individual images have a 10 MB limit.
+
+Anonymous users cannot select private account or restaurant tables. A narrowly
+scoped get_public_menu function returns only guest-facing data for active shops.
+Members cannot change activation or grant staff privileges. Staff privileges
+come from protected database rows, never editable account metadata.
+The public key in frontend code is intentionally publishable. No service-role
+key, database password, SMTP password or AI key is shipped to the browser.
+
+SQL migrations are in supabase/migrations, applied to the supplied project and
+registered in Supabase migration history. Future migrations can use the normal
+Supabase CLI workflow. Do not re-run the initial schema manually on an existing
+project. The tenant access test uses a transaction and rolls all fixtures back.
+
+ANALYTICS
+Visits are distinct anonymous sessions, refreshed after inactivity. Dish views
+count detail panels opened; saves count additions to a shortlist. Engagement is
+the share of sessions with a dish view, save, special or recommendation event.
+Reports include date ranges, daily traffic, popular dishes, sources, languages
+in the data payload, recommendation counts, special views and CSV export.
+These are menu interactions, not purchases, revenue or order conversions.
+Browser-reported events can contain bots; they are not financial records.
+Known signed-in restaurant editors are excluded from browser analytics.
+Do Not Track and Global Privacy Control suppress browser event collection.
+
+RECOMMENDATIONS — CONNECTION READY, AI KEY NOT CONFIGURED
+The deployed Supabase function recommend uses actual published menu items.
+Without a provider key it uses the tested local meal-selection rules. It checks
+course, availability, dietary filters and budgets. The guest menu also falls
+back locally if the service is unavailable. There are no invented menu items.
+
+To enable the optional Gemini connection later:
+1. Copy .env.example to .env.local (the latter is ignored and must stay private).
+2. Set GEMINI_API_KEY and confirm GEMINI_MODEL is available in that account.
+3. Run: supabase secrets set --project-ref opxmijpsppojwpogvfwd --env-file .env.local
+4. Run: supabase functions deploy recommend --project-ref opxmijpsppojwpogvfwd --use-api
+5. Deploy the translation function too: supabase functions deploy translate-menu --project-ref opxmijpsppojwpogvfwd --use-api
+6. Check the response mode is "ai" with a real menu request and review a translation draft.
+ALLOWED_ORIGINS must include the eventual website origin before public hosting.
+No AI-provider calls were tested because no key was supplied. The deployed
+rule-based fallback was tested. The service limits usage per restaurant and
+client; generated IDs are validated against current menu content before use.
+
+LANGUAGES
+The sample menu has 80 complete machine-assisted translations, previously
+spot-checked and context-corrected. Live restaurants keep their own translated
+content in Supabase; sample restaurant text never overwrites it. A language is
+enabled after the owner supplies its categories, dish names/details/ingredients,
+restaurant information where present, and featured special. The optional Translate with AI button creates a reviewable draft using the same
+Gemini connection. It does not publish automatically, and is unavailable until a
+provider key is configured. Translation use is limited to 10 requests per shop
+per hour. The language editor also accepts manual, reviewed translations.
+Custom menu copy should be reviewed by the restaurant before enabling a language.
+
+EMAIL — CONFIGURE LATER
+Supabase Auth handles password-reset messages. Signup email confirmation is disabled. Local redirect
+URLs are configured for /dashboard/ and /reset-password/ at port 8942. Signup
+automatically confirms new accounts; password minimum is 10 characters.
+
+Before onboarding outside test accounts, configure a verified SMTP sender in
+Supabase Dashboard → Authentication → Email → SMTP settings. Enter the provider's
+host, port, username, password and sender address there. Built-in Supabase email
+has development limits and may restrict recipients. No SMTP credential or sender
+domain was supplied, so production email delivery has not been verified.
+
+Demo and support submissions are stored in the staff dashboard immediately.
+No automatic sales/support notification emails are sent. Support email buttons
+open the customer's email application, addressed to varunbkurra@gmail.com.
+Team invitations do not send emails automatically: share the private invitation
+link directly with the intended recipient. Signup alone never claims access.
+
+BILLING
+The Standard plan is recorded as $200 setup and $20/month. Access is activated
+manually by Palate staff. Automatic subscription charging, checkout, card
+collection and payment-provider integration are not configured. Diner ordering,
+payments and POS integration remain outside the business plan's scope.
+
+RUN / BUILD
+From /Users/varun/Downloads/Palate:
+  npm run install:apps     # only needed on a fresh machine
+  npm run build
+  npm test
+  npm start
+
+The server binds 127.0.0.1:8942 and serves only dist/. It does not expose source,
+dependencies, SQL files or local environment files. A custom 404 is included.
+If another server is using port 8942, stop that server before npm start.
+The public build is static; it can later be hosted on a static host. Supabase
+continues to provide authentication, persistence, images and server functions.
+
+BEFORE PUBLIC HOSTING
+Choose the public domain, update Auth site_url and redirect allowlist, set the
+function ALLOWED_ORIGINS, configure SMTP and optional AI, test owner signup and
+password recovery, then generate final QR codes. No custom domains or public
+hosting were configured in this local-only build.
+
+VERIFICATION
+• Unit tests for money, URL safety, CSV quoting/import, CSV formula safety,
+  localization coverage, filters, meal constraints, availability and swaps.
+• Live SQL transaction tests for tenant isolation, owner writes, blocked
+  privilege escalation, private analytics, inactive menu privacy, and events.
+• Real Auth/API checks for restaurant creation/import, decimal-price edits,
+  public menu propagation, activation, category reorder, special validation,
+  analytics and Supabase image delivery.
+• Browser checks for staff setup, mobile editing, owner demo submission,
+  waiting state, and approval unlocking the dashboard.
+• Guest menu verified against live restaurant data.
+• Supabase advisors flag the intentional SECURITY DEFINER RPCs for review.
+  Those exposed functions use explicit permission checks and fixed search paths;
+  the public menu/event functions are intentionally anonymous.
+
+Temporary test accounts, restaurants, events and uploads are removed after QA.
+The dashboard preview always says Sample data; live dashboards start with zeros.
+
+TECHNOLOGY / REFERENCES
+React, Radix Dialog, Lucide, esbuild, QRCode, Supabase Auth/Postgres/Storage/Edge.
+https://supabase.com/docs/guides/database/postgres/row-level-security
+https://supabase.com/docs/guides/storage/security/access-control
+https://supabase.com/docs/reference/javascript/auth-signinwithpassword
+https://www.radix-ui.com/primitives/docs/components/dialog
+https://help.shopify.com/en/manual/reports-and-analytics/shopify-reports/report-types/analytics-fields
+https://ai.google.dev/gemini-api/docs/generate-content/structured-output
+
+The new workspace follows the existing Palate typography and the restrained
+spacing, clear navigation and thin borders studied in the provided Elyra code.
+The guest menu design is retained. No third-party logos or endorsements were
+added to the new pages.

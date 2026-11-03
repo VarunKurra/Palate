@@ -1,0 +1,4 @@
+name,category,price,description,ingredients,image,image_type,course,dietary,allergens,keywords,available
+Tomato pasta,Main dishes,16.00,"Tomato, basil and fresh pasta","Tomatoes, basil, pasta, olive oil",,photo,mains,vegetarian,wheat,comfort|pasta,true
+Garden salad,Starters,9.00,Fresh seasonal greens,"Lettuce, cucumber, olive oil",,photo,starters,vegan|vegetarian|gluten-free|lactose-free,,fresh|light,true
+Iced tea,Drinks,4.00,Freshly brewed tea,"Tea, water, lemon",,photo,drinks,vegan|vegetarian|gluten-free|lactose-free,,tea|cold,true

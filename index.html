@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+
+<html lang="en" class="palate-home">
+<head>
+<meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script>
+  // Refresh starts at the hero; normal section links and back navigation still work.
+  if (performance.getEntriesByType('navigation')[0]?.type === 'reload') {
+    const previousRestoration = history.scrollRestoration;
+    history.scrollRestoration = 'manual';
+    if (location.hash) history.replaceState(history.state, '', location.pathname + location.search);
+    window.addEventListener('pageshow', () => {
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    }, { once: true });
+    window.addEventListener('pagehide', () => {
+      history.scrollRestoration = previousRestoration;
+    }, { once: true });
+  }
+</script>
+<title>Palate — AI-powered menus for restaurants</title>
+<meta content="Turn your restaurant menu into a beautiful, easy-to-explore experience. Dish photos, dietary filters, smart pairings and translations. $200 setup, then $20 a month." name="description"/>
+<meta content="#09090b" name="theme-color"/>
+<link href="assets/favicon.svg?v=clear-2" rel="icon" type="image/svg+xml"/>
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png"/>
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png"/>
+<link as="font" crossorigin="" href="assets/inter-latin.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="assets/playfair-latin.woff2" rel="preload" type="font/woff2"/>
+<link as="image" fetchpriority="high" href="assets/restaurant-video-poster.jpg" rel="preload"/>
+<link href="styles.css?v=motion-20261102" rel="stylesheet"/>
+<script defer="" src="config.js?v=c9b2516c3b"></script><script defer="" src="script.js?v=motion-20261102"></script>
+<script defer src="homepage-motion.js?v=1"></script>
+<noscript><style>.media-skeleton{display:none!important}.media-surface>img{opacity:1!important}</style></noscript>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header" id="header">
+<div class="nav-wrap">
+<a aria-label="Palate home" class="brand" href="#"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="plate-mark" viewBox="0 0 64 64"><defs><mask id="palate-inline-1"><circle cx="32" cy="32" r="29" fill="white"/><g stroke="black" stroke-linecap="round" stroke-linejoin="round"><g transform="rotate(-42 32 32)" fill="none" stroke-width="3.2"><path d="M27 16v9c0 3 2 5 5 5s5-2 5-5v-9M32 16v33"/></g><g transform="rotate(42 32 32)"><ellipse cx="32" cy="21" rx="5" ry="7" fill="black" stroke="none"/><path d="M32 27v22" stroke-width="3.8"/></g></g></mask></defs><circle cx="32" cy="32" r="29" fill="currentColor" mask="url(#palate-inline-1)"/></svg><span>palate</span></a>
+<nav aria-label="Main navigation" class="desktop-nav"><div class="nav-dropdown"><button aria-controls="menu-dropdown" aria-expanded="false" class="nav-dropdown-trigger">The menu <svg aria-hidden="true" viewbox="0 0 24 24"><path d="m6 9 6 6 6-6"></path></svg></button><div class="nav-dropdown-panel" hidden="" id="menu-dropdown"><a data-nav-feature="photos" href="#experience"><span class="nav-icon">▧</span><span><strong>Guest experience</strong><small>Photos, filters &amp; helpful details</small></span></a><a data-nav-feature="languages" href="#experience"><span class="nav-icon">文</span><span><strong>Menu translations</strong><small>Make every guest feel welcome</small></span></a><a href="#for-owners"><span class="nav-icon">☷</span><span><strong>For your team</strong><small>One place to manage your menu</small></span></a></div></div><a href="/how-it-works/">How it works</a><a href="/pricing/">Pricing</a><div class="nav-dropdown"><button aria-controls="resources-dropdown" aria-expanded="false" class="nav-dropdown-trigger">Resources <svg aria-hidden="true" viewbox="0 0 24 24"><path d="m6 9 6 6 6-6"></path></svg></button><div class="nav-dropdown-panel" hidden="" id="resources-dropdown"><a href="/support/"><span class="nav-icon">?</span><span><strong>Common questions</strong><small>What to know about Palate</small></span></a><a href="/dashboard/?preview=1"><span class="nav-icon">☷</span><span><strong>Owner dashboard</strong><small>Explore the sample dashboard</small></span></a></div></div></nav>
+<div class="nav-actions"><button class="login-link" data-login="">Log in</button><button class="button nav-cta" data-start="">Book a demo</button><button aria-controls="mobile-nav" aria-expanded="false" aria-label="Open navigation" class="menu-toggle"><span></span><span></span></button></div>
+</div>
+<nav aria-label="Mobile navigation" class="mobile-nav" hidden="" id="mobile-nav"><a href="#experience">The menu</a><a href="/how-it-works/">How it works</a><a href="/pricing/">Pricing</a><a href="#faq">FAQs</a></nav>
+</header>
+<main id="main">
+<section aria-labelledby="hero-title" class="hero">
+<div class="hero-media media-surface" data-media-state="loading"><span class="media-skeleton" aria-hidden="true"></span><img alt="A waiter brings menus to guests in a bright contemporary restaurant" class="hero-image" fetchpriority="high" src="assets/restaurant-video-poster.jpg"/><video aria-hidden="true" hidden="" id="hero-video" loop="" muted="" playsinline="" poster="assets/restaurant-video-poster.jpg" preload="none"></video></div>
+<div class="hero-shade"></div>
+<div class="container hero-content"><div class="hero-copy">
+<div class="hero-kicker">AI-powered restaurant menus</div><h1 id="hero-title"><span>A menu that every</span><span>guest <em class="hero-last-word">understands.</em></span></h1>
+
+<div class="hero-actions"><button class="button button-white" data-start="">Book a demo</button><a class="text-link light-link" href="menu/">Explore the menu <span aria-hidden="true">→</span></a></div>
+</div></div>
+<div class="hero-bottom container"><div><button aria-label="Pause background motion" aria-pressed="false" class="motion-toggle" id="motion-toggle"><span aria-hidden="true" id="motion-icon">Ⅱ</span></button></div></div>
+<section aria-label="Illustrative restaurant brands" class="restaurant-strip"><div class="container"><div class="strip-caption"><span>Made for every kind of table.</span></div><div class="wordmark-viewport"><div class="wordmark-track"><div class="restaurant-wordmarks"><span class="wordmark-table">THE TABLE<small>NEIGHBORHOOD DINING</small></span><span class="wordmark-juniper">Juniper<small>KITCHEN &amp; GARDEN</small></span><span class="wordmark-casa">casa.<small>GOOD FOOD. TOGETHER.</small></span><span class="wordmark-north">NORTH / 08<small>COFFEE &amp; ALL DAY</small></span><span class="wordmark-orchard">Orchard<small>SEASONAL KITCHEN</small></span><span class="wordmark-sora">S O R A<small>JAPANESE DINING</small></span><span class="wordmark-field">FIELD &amp; FORK<small>FARM TO TABLE</small></span><span class="wordmark-maison">Maison<small>BISTRO &amp; BAR</small></span><span class="wordmark-sunday">sunday club<small>BRUNCH &amp; COFFEE</small></span><span class="wordmark-alto">ALTO<small>DINING ROOM</small></span></div><div aria-hidden="true" class="restaurant-wordmarks"><span class="wordmark-table">THE TABLE<small>NEIGHBORHOOD DINING</small></span><span class="wordmark-juniper">Juniper<small>KITCHEN &amp; GARDEN</small></span><span class="wordmark-casa">casa.<small>GOOD FOOD. TOGETHER.</small></span><span class="wordmark-north">NORTH / 08<small>COFFEE &amp; ALL DAY</small></span><span class="wordmark-orchard">Orchard<small>SEASONAL KITCHEN</small></span><span class="wordmark-sora">S O R A<small>JAPANESE DINING</small></span><span class="wordmark-field">FIELD &amp; FORK<small>FARM TO TABLE</small></span><span class="wordmark-maison">Maison<small>BISTRO &amp; BAR</small></span><span class="wordmark-sunday">sunday club<small>BRUNCH &amp; COFFEE</small></span><span class="wordmark-alto">ALTO<small>DINING ROOM</small></span></div></div></div></div></section></section>
+<section aria-labelledby="experience-title" class="experience section" id="experience">
+<div class="container">
+<div class="experience-layout"><div class="experience-copy"><div class="section-heading reveal"><div class="eyebrow">The guest experience</div><h2 id="experience-title">See the menu.<br/>Find your next favorite.</h2><p>A visual menu that helps guests choose, with photos, ingredients, and suggestions in one place.</p></div><div aria-label="Explore menu features" aria-orientation="vertical" class="feature-tabs reveal" role="tablist">
+<button aria-controls="product-demo" aria-selected="true" class="feature-tab active" data-feature="photos" id="tab-photos" role="tab"><span><strong>Dish photos</strong><span class="tab-description">Show every dish with clear photos, descriptions, and ingredients.</span></span><span aria-hidden="true" class="tab-plus">−</span></button>
+<button aria-controls="product-demo" aria-selected="false" class="feature-tab" data-feature="filters" id="tab-filters" role="tab" tabindex="-1"><span><strong>Dietary filters</strong><span class="tab-description">Let guests find vegetarian, vegan, and gluten-free options.</span></span><span aria-hidden="true" class="tab-plus">+</span></button>
+<button aria-controls="product-demo" aria-selected="false" class="feature-tab" data-feature="pairings" id="tab-pairings" role="tab" tabindex="-1"><span><strong>Pairing suggestions</strong><span class="tab-description">Help guests put a meal together with starters, sides, and drinks.</span></span><span aria-hidden="true" class="tab-plus">+</span></button>
+<button aria-controls="product-demo" aria-selected="false" class="feature-tab" data-feature="languages" id="tab-languages" role="tab" tabindex="-1"><span><strong>Menu translations</strong><span class="tab-description">Make your menu easier to explore in your guests’ language.</span></span><span aria-hidden="true" class="tab-plus">+</span></button>
+</div></div>
+<div aria-labelledby="tab-photos" class="product-stage reveal" id="product-demo" role="tabpanel">
+<div class="phone">
+<div aria-hidden="true" class="phone-status"><span>9:41</span><span class="phone-island"></span><span>▮▮▮ ▰</span></div>
+<div class="phone-content">
+<div class="restaurant-header"><div class="restaurant-top"><span class="restaurant-mark">t.</span><label class="language-control"><span class="sr-only">Sample menu language</span><select id="language"><option value="en">EN</option><option value="es">ES</option><option value="fr">FR</option></select></label></div><h3>The Table</h3><p id="restaurant-tagline">Good food. Good company.</p><span class="sample-label">SAMPLE RESTAURANT</span></div>
+<div class="menu-body"><div class="menu-welcome"><h4 id="menu-title">A little of what you love.</h4><span id="menu-intro">Freshly made. Ready to discover.</span></div>
+<div aria-label="Dietary filters" class="menu-filters" role="group"><button aria-pressed="true" class="selected" data-filter="all">All dishes</button><button aria-pressed="false" data-filter="vegan">Vegan</button><button aria-pressed="false" data-filter="gluten-free">Gluten-free</button></div>
+<div class="pairing-inline" hidden="" id="pairing-inline"><span aria-hidden="true" class="sparkle">✧</span><span id="pairing-intro">Something fresh, with a little crunch.</span><button id="sample-pairing">Find my pairing <span aria-hidden="true">→</span></button></div>
+<div class="dish-list" id="dish-list"></div><p class="phone-footnote">Sample dishes · AI food illustrations</p><div class="phone-powered">Made delicious with <strong>palate.</strong></div>
+</div>
+</div>
+<div aria-hidden="true" class="home-indicator"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section aria-labelledby="food-title" class="food-story section"><div class="container">
+<div class="split-heading reveal"><div><div class="eyebrow">More than a dish name</div><h2 id="food-title">Show guests what<br/>they’re ordering.</h2></div><p>Give every dish the detail it deserves. From the first photo to ingredients and suggested sides.</p></div>
+<div class="story-grid">
+<article class="story-card reveal"><div class="story-image media-surface" data-media-state="loading"><span class="media-skeleton" aria-hidden="true"></span><img alt="Golden vegetable dumplings with scallions, an AI illustration" loading="lazy" src="assets/dumplings.jpg"/></div><h3>Photos of every dish</h3><p>Let guests see the food before they choose. Use your photos, with labeled AI illustrations where needed.</p></article>
+<article class="story-card reveal"><div class="story-image media-surface" data-media-state="loading"><span class="media-skeleton" aria-hidden="true"></span><img alt="Fresh roasted vegetable salad, an AI illustration" loading="lazy" src="assets/salad.jpg"/></div><h3>Ingredients at a glance</h3><p>Show ingredients and dietary details so guests can find options and ask your staff informed questions.</p></article>
+<article class="story-card reveal"><div class="story-image media-surface" data-media-state="loading"><span class="media-skeleton" aria-hidden="true"></span><img alt="Basil and tomato rigatoni, an AI illustration" loading="lazy" src="assets/pasta.jpg"/></div><h3>Suggestions that go together</h3><p>Introduce sides, starters, and drinks that complement the meal.</p></article>
+</div><p class="image-note">Sample dish images are AI-generated illustrations.</p>
+</div></section>
+<section class="at-the-table container" aria-label="Palate at the table"><div class="dining-scene"><img src="assets/dining-daylight.png" alt="Guests exploring a visual menu together in a restaurant, an AI illustration" loading="lazy"/><div class="dining-caption"><h2>Good food.<br/>A clear choice.</h2><a href="/menu/" class="button button-light">Explore the menu <span aria-hidden="true">↗</span></a></div></div><div class="dining-details"><img src="menu/assets/burrata.webp" alt="Burrata with fresh tomatoes, sample dish illustration" loading="lazy"/><img src="menu/assets/lemonade.webp" alt="Strawberry basil lemonade, sample drink illustration" loading="lazy"/></div></section>
+<section aria-labelledby="owner-title" class="owner-section section" id="for-owners"><div class="container owner-grid">
+<div class="owner-copy reveal"><div class="eyebrow light">For restaurant owners</div><h2 id="owner-title">Keep your menu<br/>up to date.</h2><p>Change a price, add a special, or mark a dish sold out. Update it once and guests see the latest menu.</p><ul class="check-list"><li>Update dishes, prices, and ingredients</li><li>Turn specials on and off</li><li>See which dishes get attention</li><li>Download your table-ready QR codes</li></ul><span class="try-hint">Try the availability switch <span aria-hidden="true">↗</span></span></div>
+<div class="dashboard-scene reveal"><div class="dashboard"><div class="dashboard-top"><span class="dashboard-brand">palate.</span><span>The Table <span class="avatar">T</span></span></div><div class="dashboard-inner"><div class="dashboard-title"><div><span class="eyebrow">YOUR RESTAURANT</span><h3>Your menu</h3></div><span class="live-label">Sample dashboard</span></div><div class="dashboard-tabs"><span class="active">Menu</span><span>At a glance</span></div><div class="dashboard-columns"><span>DISH</span><span>PRICE</span><span>AVAILABLE</span></div>
+<div class="dashboard-row"><img alt="" loading="lazy" src="assets/pasta.jpg"/><div><strong>Tomato &amp; basil rigatoni</strong><span>Main course</span></div><span>$18</span><button aria-checked="true" aria-label="Rigatoni availability" class="availability-switch" id="availability" role="switch"><span></span></button></div>
+<div class="dashboard-row"><img alt="" loading="lazy" src="assets/dumplings.jpg"/><div><strong>Pan-seared dumplings</strong><span>To start</span></div><span>$10</span><span aria-label="Available" class="static-switch"></span></div>
+<div class="dashboard-row"><img alt="" loading="lazy" src="assets/salad.jpg"/><div><strong>Roasted garden bowl</strong><span>Fresh &amp; seasonal</span></div><span>$15</span><span aria-label="Available" class="static-switch"></span></div>
+<div class="dashboard-status" id="dashboard-status" role="status"><span>✓</span> All dishes available on your sample menu</div></div></div><div class="guest-update"><div><small>WHAT YOUR GUEST SEES</small><strong id="guest-status">Rigatoni is on the menu.</strong></div><span aria-hidden="true" class="update-check">✓</span></div></div>
+</div></section>
+<section aria-labelledby="setup-title" class="setup-section section" id="how-it-works"><div class="container"><div class="section-heading reveal"><div class="eyebrow">How it works</div><h2 id="setup-title">From your menu<br/>to your guests.</h2></div><div class="setup-editorial">
+<article class="reveal"><div class="setup-photo media-surface" data-media-state="loading"><span class="media-skeleton" aria-hidden="true"></span><img alt="Guests reading a paper restaurant menu, AI-generated scene" loading="lazy" src="assets/setup-menu.jpg"/></div><h3>Share your menu</h3><p>Send your current menu as a PDF, photo, or website link. We take care of the setup.</p></article>
+<article class="reveal"><div class="setup-photo media-surface" data-media-state="loading"><span class="media-skeleton" aria-hidden="true"></span><img alt="Rigatoni with fresh basil, AI-generated food illustration" loading="lazy" src="assets/pasta.jpg"/></div><h3>Make it yours</h3><p>Review your dishes, photos, ingredients, and branding. Nothing goes live until you’re ready.</p></article>
+<article class="reveal"><div class="setup-photo media-surface" data-media-state="loading"><span class="media-skeleton" aria-hidden="true"></span><img alt="A restaurant guest exploring a photo menu on a phone, AI-generated scene" loading="lazy" src="assets/dining-daylight.png"/></div><h3>Put it on the table</h3><p>Share your menu with a link or QR code. Guests scan, explore, and find what they’d love to order.</p></article>
+</div></div></section>
+<section aria-labelledby="pricing-title" class="pricing-section section" id="pricing"><div class="container pricing-editorial"><div class="pricing-intro reveal"><div class="eyebrow">Pricing</div><h2 id="pricing-title">One clear price.<br/>Your whole menu.</h2><p>A visual menu for your guests.<br/>A simple dashboard for your team.</p><button class="button button-dark" data-start="">Book a demo</button></div><div class="pricing-facts reveal"><div class="price-pair"><div><span class="price-label">Your monthly plan</span><div class="price-figure">$20<span>/ month</span></div><p>Per menu, including hosting.</p></div><div><span class="price-label">One-time setup</span><div class="price-figure">$200</div><p>Built and branded for you.</p></div></div><div class="included-label">Everything you need, included.</div><ul class="included-list"><li>Dish photos &amp; ingredients</li><li>Dietary filters &amp; translations</li><li>AI search &amp; pairing suggestions</li><li>Menu &amp; dish view analytics</li><li>Your own menu dashboard</li><li>Your branding, link &amp; QR codes</li></ul><p class="pricing-note">Works with your existing website. No change to your POS.</p></div></div></section>
+<section aria-labelledby="faq-title" class="faq-section section" id="faq"><div class="container faq-grid"><div class="reveal"><h2 id="faq-title">Frequently asked questions.</h2><p>A few things to know before getting started.</p></div><div class="faq-list reveal">
+<details><summary>Do I need a new website?<span aria-hidden="true">+</span></summary><p>No. Add your Palate menu link to your existing website, or embed the menu on your menu page. We help with setup. Your website stays yours.</p></details>
+<details><summary>Can guests order or pay through Palate?<span aria-hidden="true">+</span></summary><p>Palate is for exploring the menu. Guests order and pay the way they do today. It works alongside your staff and your POS.</p></details>
+<details><summary>What if I don’t have photos of every dish?<span aria-hidden="true">+</span></summary><p>We use your own food photos wherever possible. For dishes without photos, AI-generated illustrations can help guests picture the food. They are clearly labeled as illustrations, and you review them before launch.</p></details>
+<details><summary>How do I make changes to my menu?<span aria-hidden="true">+</span></summary><p>Your dashboard lets you edit dishes, prices, descriptions, photos, and ingredients. Mark a dish sold out or turn a special on and off. Changes appear on your live menu.</p></details>
+<details><summary>How do dietary filters and allergies work?<span aria-hidden="true">+</span></summary><p>Filters use the ingredients and dietary information your restaurant confirms. They help guests explore, but cannot guarantee a dish is safe for an allergy. Guests with serious allergies should always check with your staff.</p></details>
+<details><summary>What does the setup fee cover?<span aria-hidden="true">+</span></summary><p>The $200 one-time fee covers building your menu, photos or labeled illustrations, filters, combos, your branding, and QR codes. The $20 monthly fee covers hosting, the dashboard, AI search, updates, and analytics.</p></details>
+</div></div></section>
+</main>
+<footer class="palate-footer" id="homepage-footer">
+  <div class="container">
+    <div class="footer-invitation">
+      <h2>Your food.<br/>Their next <span>favorite.</span></h2>
+      <div class="footer-invitation-actions">
+        <button class="footer-action footer-action-primary" data-start>Book a demo <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        <a class="footer-action" href="/menu/">Explore the menu <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+    <div class="footer-directory">
+      <div class="footer-identity"><a aria-label="Palate home" class="brand" href="#"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="plate-mark" viewBox="0 0 64 64"><defs><mask id="palate-inline-2"><circle cx="32" cy="32" r="29" fill="white"/><g stroke="black" stroke-linecap="round" stroke-linejoin="round"><g transform="rotate(-42 32 32)" fill="none" stroke-width="3.2"><path d="M27 16v9c0 3 2 5 5 5s5-2 5-5v-9M32 16v33"/></g><g transform="rotate(42 32 32)"><ellipse cx="32" cy="21" rx="5" ry="7" fill="black" stroke="none"/><path d="M32 27v22" stroke-width="3.8"/></g></g></mask></defs><circle cx="32" cy="32" r="29" fill="currentColor" mask="url(#palate-inline-2)"/></svg><span>palate</span></a><p>A menu that every<br/>guest understands.</p></div>
+      <nav class="footer-link-group" aria-label="Explore Palate"><h3>Explore</h3><a href="/product/">The platform</a><a href="/how-it-works/">How it works</a><a href="/pricing/">Pricing</a></nav>
+      <nav class="footer-link-group" aria-label="For restaurants"><h3>For restaurants</h3><a href="/login/">Sign in</a><a href="/dashboard/?preview=1">Preview the dashboard</a><a href="/support/">Help &amp; support</a></nav>
+      <div class="footer-contact"><h3>Let’s talk menus.</h3><a href="mailto:varunbkurra@gmail.com">Get in touch <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="footer-back-top" href="#main">Back to top <span aria-hidden="true">↑</span></a></div>
+    </div>
+    <div class="footer-fineprint"><span>© 2026 Palate</span><nav aria-label="Legal and information"><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a><button id="image-info">About the imagery</button></nav></div>
+  </div>
+  <div class="footer-signature" aria-hidden="true"><img src="assets/palate-footer-halftone.svg" alt="" width="5549" height="1920"/></div>
+</footer>
+<dialog aria-labelledby="dish-dialog-title" class="dish-dialog" id="dish-dialog"><button aria-label="Close dish details" class="dialog-close">×</button><div id="dish-detail"></div></dialog>
+<dialog aria-labelledby="start-title" class="start-dialog" id="start-dialog"><button aria-label="Close demo request" class="dialog-close">×</button><h2 id="start-title">See Palate for your restaurant.</h2><p id="start-intro">Tell us a little about your restaurant.</p><form id="demo-form"><label>Your name<input autocomplete="name" name="name" placeholder="Sam Rivera" required=""/></label><label>Restaurant name<input autocomplete="organization" name="restaurant" placeholder="The Table" required=""/></label><label>Email address<input autocomplete="email" name="email" placeholder="you@restaurant.com" required="" type="email"/></label><label>Menu or website link <span>(optional)</span><input name="website" placeholder="https://your-restaurant.com" type="url"/></label><button class="button button-dark" id="demo-submit" type="submit">Continue to email <span aria-hidden="true">↗</span></button><p class="form-note" id="form-note">Opens a draft in your email app. You review it before sending.</p></form><div hidden="" id="form-result" role="status"><span class="success-icon">✓</span><h3>Your request is ready.</h3><p id="result-copy">Save your details below. Nothing has been sent or booked.</p><a class="button button-dark" download="Palate-demo-request.txt" id="download-request">Save my request <span aria-hidden="true">↓</span></a><button class="text-link" id="back-form">Edit my details</button></div></dialog>
+<dialog aria-labelledby="info-title" class="info-dialog" id="info-dialog"><button aria-label="Close image information" class="dialog-close">×</button><div class="eyebrow">ABOUT THE IMAGERY</div><h2 id="info-title">A picture of<br/><em>what’s possible.</em></h2><p>The restaurant scene and sample dish images on this homepage are AI-generated illustrations. The Table is a fictional restaurant used to demonstrate Palate.</p><p>For real restaurant menus, Palate uses restaurant-provided photos wherever possible and labels AI-generated alternatives.</p><p id="motion-info">The background is an original AI-generated restaurant video created in Google Flow. Dish images are AI-generated illustrations.</p><p>The restaurant names shown in the design are fictional sample brands.</p></dialog>
+<dialog aria-labelledby="login-title" class="login-dialog" id="login-dialog"><button aria-label="Close login information" class="dialog-close">×</button><div class="eyebrow">For restaurant owners</div><h2 id="login-title">Your menu, managed here.</h2><p>Owner login will be available when Palate launches. For now, explore how the dashboard works.</p><button class="button button-dark" id="view-owner-demo">Explore the sample dashboard</button></dialog></body></html>

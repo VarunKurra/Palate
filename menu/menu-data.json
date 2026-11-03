@@ -1,0 +1,555 @@
+{
+  "schemaVersion": 1,
+  "restaurant": {
+    "id": "juniper-sample",
+    "name": "Juniper",
+    "monogram": "J",
+    "subtitle": {
+      "en": "Seasonal kitchen & good company",
+      "es": "Cocina de temporada y buena compañía",
+      "fr": "Cuisine de saison et bonne compagnie"
+    },
+    "sample": true,
+    "currency": "USD",
+    "defaultLanguage": "en",
+    "languages": [
+      "en",
+      "es",
+      "fr",
+      "de",
+      "it",
+      "pt",
+      "zh-CN",
+      "zh-TW",
+      "ja",
+      "ko",
+      "ar",
+      "hi",
+      "bn",
+      "ur",
+      "pa",
+      "mr",
+      "ta",
+      "te",
+      "gu",
+      "kn",
+      "ml",
+      "ru",
+      "uk",
+      "pl",
+      "nl",
+      "tr",
+      "vi",
+      "th",
+      "id",
+      "ms",
+      "fil",
+      "fa",
+      "he",
+      "el",
+      "ro",
+      "hu",
+      "cs",
+      "sk",
+      "sv",
+      "da",
+      "no",
+      "fi",
+      "sw",
+      "am",
+      "ha",
+      "yo",
+      "ne",
+      "si",
+      "my",
+      "km",
+      "lo",
+      "bg",
+      "sr",
+      "hr",
+      "sq",
+      "az",
+      "kk",
+      "uz",
+      "af",
+      "so",
+      "zu",
+      "jv",
+      "su",
+      "or",
+      "ps",
+      "sd",
+      "ig",
+      "om",
+      "rw",
+      "mg",
+      "ceb",
+      "ku",
+      "ckb",
+      "ak",
+      "ti",
+      "ug",
+      "ca",
+      "hy",
+      "ka",
+      "lt"
+    ],
+    "address": {
+      "en": "Your restaurant address",
+      "es": "La dirección de tu restaurante",
+      "fr": "L’adresse de votre restaurant"
+    },
+    "hours": {
+      "en": "Add your opening hours",
+      "es": "Añade tu horario",
+      "fr": "Ajoutez vos horaires"
+    },
+    "theme": {
+      "accent": "#315846",
+      "accentSoft": "#e8efe8",
+      "paper": "#fcfaf6",
+      "warm": "#f5e6d7"
+    },
+    "palateUrl": "../",
+    "logo": null
+  },
+  "categories": [
+    {
+      "id": "starters",
+      "name": {
+        "en": "Starters",
+        "es": "Entrantes",
+        "fr": "Entrées"
+      }
+    },
+    {
+      "id": "mains",
+      "name": {
+        "en": "Main dishes",
+        "es": "Principales",
+        "fr": "Plats"
+      }
+    },
+    {
+      "id": "sweets",
+      "name": {
+        "en": "Desserts",
+        "es": "Postres",
+        "fr": "Desserts"
+      }
+    },
+    {
+      "id": "drinks",
+      "name": {
+        "en": "Drinks",
+        "es": "Bebidas",
+        "fr": "Boissons"
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "burrata",
+      "category": "starters",
+      "priceCents": 1200,
+      "dietary": [
+        "vegetarian"
+      ],
+      "available": true,
+      "image": "assets/burrata.webp",
+      "imageKind": "illustration",
+      "name": {
+        "en": "Burrata & heirloom tomatoes",
+        "es": "Burrata y tomates de temporada",
+        "fr": "Burrata et tomates anciennes"
+      },
+      "short": {
+        "en": "Creamy burrata, ripe tomatoes, grilled sourdough.",
+        "es": "Burrata cremosa, tomates y pan a la parrilla.",
+        "fr": "Burrata crémeuse, tomates et pain grillé."
+      },
+      "description": {
+        "en": "A soft ball of fresh burrata, sweet heirloom tomatoes and basil, finished with olive oil. Scoop it up with warm grilled sourdough.",
+        "es": "Burrata fresca con tomates dulces y albahaca, terminada con aceite de oliva. Acompañada de pan de masa madre a la parrilla.",
+        "fr": "Burrata fraîche, tomates anciennes et basilic, arrosés d’huile d’olive. Servie avec du pain au levain grillé."
+      },
+      "ingredients": {
+        "en": "Burrata (milk), tomatoes, basil, olive oil, sourdough (wheat), sea salt.",
+        "es": "Burrata (leche), tomates, albahaca, aceite de oliva, pan (trigo), sal marina.",
+        "fr": "Burrata (lait), tomates, basilic, huile d’olive, pain (blé), sel."
+      },
+      "allergens": [
+        "milk",
+        "wheat"
+      ],
+      "pairsWith": [
+        "pasta",
+        "lemonade"
+      ],
+      "moods": [
+        "fresh",
+        "creamy",
+        "light",
+        "tomato",
+        "cheese"
+      ],
+      "badge": null
+    },
+    {
+      "id": "dumplings",
+      "category": "starters",
+      "priceCents": 1000,
+      "dietary": [
+        "vegan",
+        "vegetarian",
+        "lactose-free",
+        "spicy"
+      ],
+      "available": true,
+      "image": "assets/dumplings.jpg",
+      "imageKind": "illustration",
+      "name": {
+        "en": "Chili-crisp dumplings",
+        "es": "Dumplings con chile crujiente",
+        "fr": "Raviolis au piment croustillant"
+      },
+      "short": {
+        "en": "Golden vegetable dumplings, chili oil, scallions.",
+        "es": "Dumplings de verduras, aceite de chile y cebolleta.",
+        "fr": "Raviolis aux légumes, huile pimentée et ciboule."
+      },
+      "description": {
+        "en": "Six pan-seared vegetable dumplings with crisp bottoms and a soft center. Finished with chili oil and scallions, with soy dipping sauce on the side.",
+        "es": "Seis dumplings de verduras dorados a la plancha, con aceite de chile y cebolleta. Salsa de soja aparte.",
+        "fr": "Six raviolis aux légumes dorés à la poêle, avec huile pimentée et ciboule. Sauce soja à part."
+      },
+      "ingredients": {
+        "en": "Wheat wrappers, cabbage, mushrooms, carrot, scallions, soy sauce (soy, wheat), sesame, chili oil.",
+        "es": "Masa de trigo, col, champiñones, zanahoria, cebolleta, salsa de soja (soja, trigo), sésamo, aceite de chile.",
+        "fr": "Pâte de blé, chou, champignons, carotte, ciboule, sauce soja (soja, blé), sésame, huile pimentée."
+      },
+      "allergens": [
+        "wheat",
+        "soy",
+        "sesame"
+      ],
+      "pairsWith": [
+        "salad",
+        "tea"
+      ],
+      "moods": [
+        "spicy",
+        "crispy",
+        "warm",
+        "comfort",
+        "vegetables"
+      ],
+      "badge": "popular"
+    },
+    {
+      "id": "pasta",
+      "category": "mains",
+      "priceCents": 1800,
+      "dietary": [
+        "vegetarian"
+      ],
+      "available": true,
+      "image": "assets/pasta.jpg",
+      "imageKind": "illustration",
+      "name": {
+        "en": "Tomato & basil rigatoni",
+        "es": "Rigatoni con tomate y albahaca",
+        "fr": "Rigatoni tomate et basilic"
+      },
+      "short": {
+        "en": "Slow-roasted tomatoes, fresh basil, parmesan.",
+        "es": "Tomates asados, albahaca fresca y parmesano.",
+        "fr": "Tomates rôties, basilic frais et parmesan."
+      },
+      "description": {
+        "en": "Ridged pasta tossed in a rich, slow-roasted tomato sauce, with fresh basil and vegetarian parmesan. Comforting, simple, and made for a long lunch.",
+        "es": "Pasta con salsa de tomate asado, albahaca fresca y parmesano vegetariano. Sencilla y reconfortante.",
+        "fr": "Pâtes à la sauce de tomates rôties, basilic frais et parmesan végétarien. Un plat simple et réconfortant."
+      },
+      "ingredients": {
+        "en": "Rigatoni (wheat), tomatoes, basil, vegetarian parmesan (milk), olive oil, garlic.",
+        "es": "Rigatoni (trigo), tomates, albahaca, parmesano vegetariano (leche), aceite de oliva, ajo.",
+        "fr": "Rigatoni (blé), tomates, basilic, parmesan végétarien (lait), huile d’olive, ail."
+      },
+      "allergens": [
+        "wheat",
+        "milk"
+      ],
+      "pairsWith": [
+        "burrata",
+        "lemonade"
+      ],
+      "moods": [
+        "comfort",
+        "pasta",
+        "tomato",
+        "warm",
+        "cheese"
+      ],
+      "badge": "favorite"
+    },
+    {
+      "id": "salad",
+      "category": "mains",
+      "priceCents": 1500,
+      "dietary": [
+        "vegan",
+        "vegetarian",
+        "lactose-free",
+        "gluten-free"
+      ],
+      "available": true,
+      "image": "assets/salad.jpg",
+      "imageKind": "illustration",
+      "name": {
+        "en": "Roasted garden bowl",
+        "es": "Bol de verduras asadas",
+        "fr": "Bol de légumes rôtis"
+      },
+      "short": {
+        "en": "Roasted vegetables, chickpeas, citrus & herbs.",
+        "es": "Verduras asadas, garbanzos, cítricos y hierbas.",
+        "fr": "Légumes rôtis, pois chiches, agrumes et herbes."
+      },
+      "description": {
+        "en": "Roasted beets and sweet potato over crisp greens, with chickpeas, bright citrus and fresh herbs. A lemon dressing brings it all together.",
+        "es": "Remolacha y boniato asados con hojas verdes, garbanzos, cítricos y hierbas. Con aliño de limón.",
+        "fr": "Betteraves et patates douces rôties, salade croquante, pois chiches, agrumes et herbes. Vinaigrette au citron."
+      },
+      "ingredients": {
+        "en": "Beets, sweet potato, chickpeas, citrus, greens, parsley, mint, sesame, lemon, olive oil.",
+        "es": "Remolacha, boniato, garbanzos, cítricos, hojas verdes, perejil, menta, sésamo, limón, aceite de oliva.",
+        "fr": "Betteraves, patates douces, pois chiches, agrumes, salade, persil, menthe, sésame, citron, huile d’olive."
+      },
+      "allergens": [
+        "sesame"
+      ],
+      "pairsWith": [
+        "dumplings",
+        "tea"
+      ],
+      "moods": [
+        "fresh",
+        "light",
+        "salad",
+        "vegetables",
+        "citrus"
+      ],
+      "badge": "seasonal"
+    },
+    {
+      "id": "chicken",
+      "category": "mains",
+      "priceCents": 2400,
+      "dietary": [
+        "lactose-free",
+        "gluten-free"
+      ],
+      "available": true,
+      "image": "assets/chicken.webp",
+      "imageKind": "illustration",
+      "name": {
+        "en": "Lemon & herb chicken",
+        "es": "Pollo al limón y hierbas",
+        "fr": "Poulet au citron et aux herbes"
+      },
+      "short": {
+        "en": "Golden chicken, baby potatoes, green beans.",
+        "es": "Pollo dorado, patatas pequeñas y judías verdes.",
+        "fr": "Poulet doré, pommes de terre et haricots verts."
+      },
+      "description": {
+        "en": "Herb-roasted chicken with crisp skin, baby potatoes and green beans. Served with a light lemon and olive-oil jus.",
+        "es": "Pollo asado con hierbas, piel crujiente, patatas y judías verdes. Con jugo de limón y aceite de oliva.",
+        "fr": "Poulet rôti aux herbes, peau croustillante, pommes de terre et haricots verts. Jus léger au citron et à l’huile d’olive."
+      },
+      "ingredients": {
+        "en": "Chicken, potatoes, green beans, lemon, olive oil, rosemary, thyme, garlic.",
+        "es": "Pollo, patatas, judías verdes, limón, aceite de oliva, romero, tomillo, ajo.",
+        "fr": "Poulet, pommes de terre, haricots verts, citron, huile d’olive, romarin, thym, ail."
+      },
+      "allergens": [],
+      "pairsWith": [
+        "burrata",
+        "lemonade"
+      ],
+      "moods": [
+        "protein",
+        "chicken",
+        "warm",
+        "comfort",
+        "lemon"
+      ],
+      "badge": null
+    },
+    {
+      "id": "cake",
+      "category": "sweets",
+      "priceCents": 900,
+      "dietary": [
+        "vegetarian"
+      ],
+      "available": true,
+      "image": "assets/cake.webp",
+      "imageKind": "illustration",
+      "name": {
+        "en": "Chocolate ganache cake",
+        "es": "Tarta de chocolate",
+        "fr": "Gâteau au chocolat"
+      },
+      "short": {
+        "en": "Dark chocolate, vanilla cream, fresh raspberry.",
+        "es": "Chocolate negro, crema de vainilla y frambuesa.",
+        "fr": "Chocolat noir, crème vanillée et framboise."
+      },
+      "description": {
+        "en": "A rich slice of chocolate layer cake with a glossy dark chocolate ganache. A little vanilla cream and fresh raspberry on the side.",
+        "es": "Tarta de chocolate con ganache de chocolate negro, crema de vainilla y frambuesa fresca.",
+        "fr": "Gâteau au chocolat et ganache au chocolat noir, accompagné de crème vanillée et d’une framboise."
+      },
+      "ingredients": {
+        "en": "Chocolate, wheat flour, eggs, butter (milk), cream (milk), sugar, vanilla, raspberry.",
+        "es": "Chocolate, harina de trigo, huevos, mantequilla (leche), nata (leche), azúcar, vainilla, frambuesa.",
+        "fr": "Chocolat, farine de blé, œufs, beurre (lait), crème (lait), sucre, vanille, framboise."
+      },
+      "allergens": [
+        "wheat",
+        "egg",
+        "milk"
+      ],
+      "pairsWith": [
+        "tea",
+        "lemonade"
+      ],
+      "moods": [
+        "sweet",
+        "chocolate",
+        "comfort"
+      ],
+      "badge": null
+    },
+    {
+      "id": "lemonade",
+      "category": "drinks",
+      "priceCents": 600,
+      "dietary": [
+        "vegan",
+        "vegetarian",
+        "lactose-free",
+        "gluten-free"
+      ],
+      "available": true,
+      "image": "assets/lemonade.webp",
+      "imageKind": "illustration",
+      "name": {
+        "en": "Strawberry basil lemonade",
+        "es": "Limonada de fresa y albahaca",
+        "fr": "Limonade fraise et basilic"
+      },
+      "short": {
+        "en": "Fresh strawberry, lemon, basil & sparkling water.",
+        "es": "Fresa, limón, albahaca y agua con gas.",
+        "fr": "Fraise, citron, basilic et eau pétillante."
+      },
+      "description": {
+        "en": "A bright, lightly sparkling lemonade with fresh strawberries, a squeeze of lemon and fragrant basil. Served over ice.",
+        "es": "Limonada con gas suave, fresas frescas, limón y albahaca. Servida con hielo.",
+        "fr": "Limonade légèrement pétillante aux fraises fraîches, citron et basilic. Servie sur glace."
+      },
+      "ingredients": {
+        "en": "Strawberry, lemon, basil, cane sugar, sparkling water, ice.",
+        "es": "Fresa, limón, albahaca, azúcar de caña, agua con gas, hielo.",
+        "fr": "Fraise, citron, basilic, sucre de canne, eau pétillante, glace."
+      },
+      "allergens": [],
+      "pairsWith": [
+        "pasta",
+        "burrata"
+      ],
+      "moods": [
+        "fresh",
+        "fruity",
+        "sweet",
+        "cold",
+        "sparkling"
+      ],
+      "badge": null
+    },
+    {
+      "id": "tea",
+      "category": "drinks",
+      "priceCents": 500,
+      "dietary": [
+        "vegan",
+        "vegetarian",
+        "lactose-free",
+        "gluten-free"
+      ],
+      "available": true,
+      "image": "assets/tea.webp",
+      "imageKind": "illustration",
+      "name": {
+        "en": "Jasmine iced tea",
+        "es": "Té helado de jazmín",
+        "fr": "Thé glacé au jasmin"
+      },
+      "short": {
+        "en": "Floral jasmine tea, lemon, plenty of ice.",
+        "es": "Té de jazmín, limón y mucho hielo.",
+        "fr": "Thé au jasmin, citron et glaçons."
+      },
+      "description": {
+        "en": "Freshly brewed jasmine tea, chilled and served over ice with lemon. Unsweetened, with a gentle floral finish.",
+        "es": "Té de jazmín recién preparado, frío y servido con hielo y limón. Sin azúcar.",
+        "fr": "Thé au jasmin infusé puis refroidi, servi sur glace avec du citron. Sans sucre."
+      },
+      "ingredients": {
+        "en": "Jasmine tea, lemon, filtered water, ice. Contains caffeine.",
+        "es": "Té de jazmín, limón, agua filtrada, hielo. Contiene cafeína.",
+        "fr": "Thé au jasmin, citron, eau filtrée, glace. Contient de la caféine."
+      },
+      "allergens": [],
+      "pairsWith": [
+        "dumplings",
+        "cake"
+      ],
+      "moods": [
+        "light",
+        "tea",
+        "cold",
+        "unsweetened",
+        "fresh"
+      ],
+      "badge": null
+    }
+  ],
+  "deal": {
+    "enabled": true,
+    "id": "lunch-set",
+    "name": {
+      "en": "Lunch special",
+      "es": "Menú de almuerzo",
+      "fr": "Formule déjeuner"
+    },
+    "description": {
+      "en": "A starter, a main & a drink.",
+      "es": "Un entrante, un plato y una bebida.",
+      "fr": "Une entrée, un plat et une boisson."
+    },
+    "itemIds": [
+      "dumplings",
+      "pasta",
+      "lemonade"
+    ],
+    "discountCents": 600
+  },
+  "assistant": {
+    "endpoint": null,
+    "mode": "local-preview"
+  }
+}

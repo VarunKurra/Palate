@@ -1,0 +1,10 @@
+.git
+.env*
+!.env.example
+**/node_modules
+dist
+work
+supabase/.temp
+supabase/.branches
+**/.DS_Store
+*.log

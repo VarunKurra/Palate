@@ -1,0 +1,17 @@
+{
+  "name": "palate",
+  "private": true,
+  "version": "2.0.0",
+  "type": "module",
+  "scripts": {
+    "install:apps": "npm --prefix platform ci && npm --prefix menu ci",
+    "build": "npm --prefix platform run build && npm --prefix menu run build && node scripts/package-public.mjs",
+    "test": "node --test scripts/*.test.mjs && npm --prefix platform test && npm --prefix menu test",
+    "start": "python3 scripts/serve.py",
+    "check:release": "node scripts/check-release.mjs",
+    "build:vercel": "npm test && npm run build && npm run check:release"
+  },
+  "engines": {
+    "node": "22.x"
+  }
+}

@@ -1,0 +1,60 @@
+PALATE MENU · DESIGN NOTES
+
+The guest-facing features follow the supplied Palate Business Plan.pdf:
+photo dishes, ingredient details, dietary preferences, suggestions and
+swaps, pairings, specials, translation and Palate attribution. The earlier
+Tapmenu reference informed the simple photo-and-name rows. This is a new
+implementation, not a copy of that site’s source.
+
+The mobile layout puts the restaurant, a compact special, search and diet
+filters before the dishes. Categories remain visible while browsing; the
+heading count is separated into a small outlined badge. Decorative rules,
+category taglines and the larger introduction were removed after feedback.
+The recommendation form uses one question and one line explaining its
+purpose. The same design adapts to tablets and desktops with a category
+sidebar and a right-side detail panel. Right-to-left languages mirror it.
+
+Component and interaction references:
+Radix Dialog: https://www.radix-ui.com/primitives/docs/components/dialog
+Radix Toggle Group: https://www.radix-ui.com/primitives/docs/components/toggle-group
+W3C modal dialog pattern: https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/
+W3C target sizing: https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html
+Nielsen Norman Group, visible navigation:
+https://www.nngroup.com/articles/hamburger-menus/
+
+These references informed visible navigation, keyboard focus handling,
+Escape-to-close, appropriate hit areas and readable controls. They do not
+constitute a claim of independently certified accessibility compliance.
+
+SAMPLE PHOTOGRAPHY
+All eight dishes are sample images. The existing pasta, dumplings and garden
+bowl images came from the Palate project. Five additional images were made
+with the built-in image generation tool and optimized as WebP assets.
+These images are illustrations, not photos of an actual restaurant’s food.
+
+Shared generation prompt:
+“Use case: photorealistic-natural. Asset type: square sample restaurant menu
+photograph. [SUBJECT] Beautiful appetizing real food photography, 45-degree
+tabletop angle, entire dish/glass centered with breathing room all around.
+Light warm stone tabletop, softly blurred natural light, crisp true-to-life
+food textures, rich but natural color, refined casual bistro. No text,
+labels, hands, people, logos, watermark, collage or other dishes. Single image.”
+
+Subjects used:
+• assets/burrata.webp — burrata with heirloom tomatoes, basil, olive oil and
+  two slices of grilled sourdough on a white plate.
+• assets/chicken.webp — herb-roast chicken breast with crisp skin, baby
+  potatoes, green beans and lemon jus on a white plate.
+• assets/cake.webp — a slice of chocolate ganache cake with vanilla cream
+  and raspberry on a white plate.
+• assets/lemonade.webp — strawberry basil lemonade, pink with ice in a glass.
+• assets/tea.webp — amber jasmine iced tea with lemon and ice in a glass.
+
+TRANSLATION NOTES
+80 language bundles are stored locally. Initial additional-language copy
+was produced through Google Translate’s public translation endpoint at
+build time, with contextual corrections and manual spot checks. No external
+translation call runs in the customer’s browser. Completeness tests cover
+all interface keys, item details, ingredients and savings placeholders.
+Translation quality is not equivalent to native restaurant review; see the
+README before replacing the fictional restaurant with real menu data.
